@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_mysqldb import MySQL
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # Configuración de la base de datos
 app.config['MYSQL_HOST'] = 'localhost'
@@ -11,8 +11,13 @@ app.config['MYSQL_DB'] = 'users'
 
 mysql = MySQL(app)
 
+# Ruta para la página inicial
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 # Ruta para el login
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         # Obtener los datos del formulario
@@ -34,11 +39,29 @@ def login():
 
     return render_template('login.html')
 
+# Ruta para el registro
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        # Obtener los datos del formulario
+        username = request.form['username']
+        password = request.form['password']
+
+        # Insertar el nuevo usuario en la base de datos
+        cur = mysql.connection.cursor()
+        cur.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, password))
+        mysql.connection.commit()
+        cur.close()
+
+        # Redirigir al usuario a la página de login
+        return redirect(url_for('login'))
+
+    return render_template('register.html')
+
 # Ruta para el dashboard
 @app.route('/dashboard')
 def dashboard():
-    return 'Bienvenido al dashboard'
+    return render_template('dashboard.html')
 
 if __name__ == '__main__':
-
-    app.run(host='127.0.0.1', port=80)
+    app.run(host='0.0.0.0', port=80)
