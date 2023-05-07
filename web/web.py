@@ -101,7 +101,7 @@ def get_all_records():
 # Ruta para el dashboard
 @app.route('/dashboard')
 def dashboard():
-    return redirect('http://192.168.10.4:5600')
+    return redirect('http://192.168.10.4:5600/?password=123456')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
