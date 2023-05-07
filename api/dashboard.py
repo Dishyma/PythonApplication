@@ -1,5 +1,3 @@
-from doctest import OutputChecker
-from tkinter.tix import InputOnly
 import pandas as pd
 import plotly.graph_objects as go
 import dash
@@ -22,15 +20,13 @@ fig.update_layout(mapbox_style="stamen-terrain", mapbox_center_lon=-75.589, mapb
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 
 app = dash.Dash(__name__)
-server = app.server  # Create a Flask server instead of the default Dash server
+server = app.server 
 
 app.layout = html.Div([
-    html.H1("Este es un proyecto"),
+    html.H1("Mapa con niveles"),
     dcc.Graph(figure=fig),
 ])
 
 
-
-
 if __name__ == '__main__':
-    app.run_server(host='0.0.0.0', port=5001)
+    app.run_server(host='0.0.0.0', port=5600)

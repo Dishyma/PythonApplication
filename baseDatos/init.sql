@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS users;
 USE users;
 
 CREATE TABLE users (
-  id INT PRIMARY KEY,
-  username VARCHAR(50),
-  password VARCHAR(50)
+  id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+  username VARCHAR(50) NOT NULL,
+  password VARCHAR(50) NOT NULL
 );
