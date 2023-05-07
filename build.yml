@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  container1:
+    image: ubuntu
+    container_name: container1
+    volumes:
+      - ./web/:/app
+    command: bash -c "apt update && apt install -y python3 && pip install -r /app/requirements.txt && python /app/web.py"
+    ports:
+      - 80:80
+    mynetwork:
+        ipv4_address: 192.168.10.2/24
+    depends_on:
+      - container2
+
+  container2:
+    image: mysql
+    container_name: container2
+    environment:
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=users
+    ports:
+      - 3306:3306
+    volumes:
+      - ./baseDatos/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      mynetwork:
+        ipv4_address: 192.168.10.3/24
+
+  container3:
+    image: ubuntu
+    container_name: container3
+    volumes:
+      - ./api/:/app
+    command: bash -c "apt update && apt install -y python3 && pip install -r /app/requirements.txt && python /app/api.py"
+    networks:
+      mynetwork:
+        ipv4_address: 192.168.10.4/24
+
+networks:
+  mynetwork:
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/24
