@@ -26,6 +26,10 @@ If you are running this application within a cloud environment, you must modify 
 
 ![enter image description here](https://i.ibb.co/xGZcg0h/Screenshot-2023-05-08-105201.png)
 
+If you are in a cloud environment, also enable port 8080 and port 5600 in the security groups
+
+![enter image description here](https://i.ibb.co/Lpqn0KF/Screenshot-2023-05-08-111725.png)
+
 ## Running the application
 
 - Run inicio.sh
