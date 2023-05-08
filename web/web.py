@@ -99,9 +99,10 @@ def get_all_records():
         return f'Error al obtener los registros: {str(e)}' """
 
 # Ruta para el dashboard
+### Modificar si se corre dentro de un entorno de nube ###
 @app.route('/dashboard')
 def dashboard():
-    return redirect('http://44.205.92.148:5600/?password=123456')
+    return redirect('http://localhost:5600/?password=123456')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
