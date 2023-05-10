@@ -1,3 +1,55 @@
+# AplicaciónPython
+
+Esta es una aplicación web de python simple con matraz
+
+## requisitos
+
+esta aplicación se puede ejecutar en cualquier sistema operativo, pero la basamos en sistemas linux, por lo tanto usamos archivos .sh
+
+## Cómo instalar nuestra aplicación
+
+- primero tienes que clonar nuestro repositorio en tu entorno
+
+### HTTPS
+
+    clon de git https://github.com/Dishyma/PythonApplication.git
+    cd PythonApplication/
+
+### SSH
+
+    clon de git https://github.com/Dishyma/PythonApplication.git
+    cd PythonApplication/
+
+## Importante
+
+Si está ejecutando esta aplicación dentro de un entorno de nube, debe modificar el archivo web.py y cambiar la dirección localhost a su dirección IP pública, de la misma manera se recomienda utilizar direcciones IP elásticas.
+
+![ingrese la descripción de la imagen aquí](https://i.ibb.co/xGZcg0h/Screenshot-2023-05-08-105201.png)
+
+Si está en un entorno de nube, habilite también el puerto 8080 y el puerto 5600 en los grupos de seguridad
+
+![ingrese la descripción de la imagen aquí](https://i.ibb.co/Lpqn0KF/Screenshot-2023-05-08-111725.png)
+
+## Ejecutando la aplicación
+
+- Ejecutar inicio.sh
+
+Este archivo actualizará el repositorio de paquetes e instalará docker compose junto con dos imágenes, mysql y ubuntu, finalmente, ejecutará el archivo docker-compose.yml, que creará tres contenedores.
+
+     sudo sh ./inicio.sh
+
+### Otro sistema operativo**
+
+    > Si tienes otro sistema operativo, debes descargar docker
+    > compose, y las imágenes manualmente (mysql, ubuntu), y finalmente ejecutar       el archivo
+    > docker-compose.yml
+
+## Finalmente
+
+    > ingrese su host local o IP pública a través del puerto 8080
+
+
+
 # PythonApplication
 
 This is simple python web application with flask
