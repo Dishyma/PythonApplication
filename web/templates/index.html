@@ -4,11 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina de inicio</title>
+    <title>Página de inicio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button-container a:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenido a mi aplicación</h1>
-	<a href="/login"><button>Iniciar sesión</button></a>
-	<a href="/register"><button>Registrarse</button></a>
+    <div class="container">
+        <h1>Bienvenido a mi aplicación</h1>
+        <div class="button-container">
+            <a href="/login">Iniciar sesión</a>
+            <a href="/register">Registrarse</a>
+        </div>
+    </div>
 </body>
 </html>
