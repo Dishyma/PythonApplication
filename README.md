@@ -47,6 +47,7 @@ Este archivo actualizará el repositorio de paquetes e instalará docker compose
 ## Finalmente
 
     > ingrese su host local o IP pública a través del puerto 8080
+    > Si es primera vez deves regustrarte primero, y luego ingresar!
 
 
 
