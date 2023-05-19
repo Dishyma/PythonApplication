@@ -12,12 +12,12 @@ esta aplicación se puede ejecutar en cualquier sistema operativo, pero la basam
 
 ### HTTPS
 
-    clon de git https://github.com/Dishyma/PythonApplication.git
+    git clone https://github.com/Dishyma/PythonApplication.git
     cd PythonApplication/
 
 ### SSH
 
-    clon de git https://github.com/Dishyma/PythonApplication.git
+    git clone https://github.com/Dishyma/PythonApplication.git
     cd PythonApplication/
 
 ## Importante
